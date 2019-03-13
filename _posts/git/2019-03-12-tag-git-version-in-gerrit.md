@@ -27,6 +27,8 @@ For more details, refer to the [git tagging][git tagging] doc.
 
 Please, verify push permissions to GerritHub and (if required) to GitHub.
 
+## So, let's get started!
+
 **Review remotes:**
 ```bash
 $ git remote -v
@@ -146,6 +148,10 @@ The **--no-thin** option is used because of the following possible error: from [
 $ git push --force --follow-tags --no-thin gerrit master:refs/heads/master
 $ git push --force --follow-tags --no-thin origin master:master
 ```
+
+## Conclusion
+At the current state, our repository has an updated branches and created tag, replicated from GerritHub to GitHub repository.  
+Enjoy and see you in the next articles!
 
 [semver]: https://semver.org/
 [gerrithub]: http://gerrithub.io/
