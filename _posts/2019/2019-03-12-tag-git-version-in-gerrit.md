@@ -1,6 +1,5 @@
 ---
 title: "Tag Git Version in Gerrit"
-layout: single
 tags: git gerrit
 ---
 When a new set of changes merged into the working branch, you would like to tag it with a specific version.
