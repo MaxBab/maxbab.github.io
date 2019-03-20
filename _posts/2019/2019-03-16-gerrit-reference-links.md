@@ -15,12 +15,12 @@ Gerrit has the following structure.
 
 {% include image image_path="gerrit_structure.png" caption="The image taken from the [Gerrit documentation](https://gerrit-review.googlesource.com/Documentation/intro-how-gerrit-works.html)" %}
 
->When Gerrit is configured as the central source repository, all code changes are sent to Pending Changes for others to review and discuss.
+>When Gerrit is configured as the central source repository, all code changes are sent to **Pending Changes** for others to review and discuss.
 When enough reviewers have approved a code change, you can submit the change to the code base.  
 * <ins>From the Gerrit documentation:</ins>
 
 ### The git-review command  
-In my day to day work with Gerrit, I'm using the `git review` command line tool.  
+In my day-to-day work with Gerrit, I'm using the `git review` command line tool.  
 The [git-review][git-review] tool has been created and maintained by the OpenStack Foundation. The tool wraps the actual Gerrit command and gives the user an easy and nice experience.  
 The actual push command could be viewed by passing the '-n' argument.
 
