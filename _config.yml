@@ -11,7 +11,7 @@ title_separator          : "-"
 name                     : "Maxim"
 description              : "Ctrl notes."
 url                      : "http://ctrlnotes.com"
-repository               : MaxBab/maxbab.github.io
+repository               : "MaxBab/maxbab.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -46,8 +46,8 @@ staticman:
     date:
       type               : "date"
       options:
-        format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-  endpoint               : "https://dev.staticman.net/v3/entry/github/" # URL of your own deployment with trailing slash, will fallback to the public instance
+        format           : "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+  endpoint               : "https://dev.staticman.net/v3/entry/github/MaxBab/maxbab.github.io/comments" # URL of your own deployment with trailing slash, will fallback to the public instance
 reCaptcha:
   siteKey                :
   secret                 :
