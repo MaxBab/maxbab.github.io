@@ -11,7 +11,7 @@ title_separator          : "-"
 name                     : "Maxim"
 description              : "Ctrl notes."
 url                      : "http://ctrlnotes.com"
-repository               : MaxBab/maxbab.github.io
+repository               : "MaxBab/maxbab.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -36,9 +36,9 @@ staticman:
   branch                 : "master"
   commitMessage          : "add [comment]: by {fields.name} - {@date} <Staticman>\n\n{fields.url}#comment-{@id}"
   filename               : "entry{@timestamp}"
-  format                 : "yaml"
-  moderation             : true
-  path                   : "/_data/comments/{options.slug}" (default)
+  format                 : "yml"
+  moderation             : false
+  path                   : "/_data/comments/{options.slug}"
   requiredFields         : ['name', 'email', 'message']
   transforms:
     email                : "md5"
@@ -46,11 +46,11 @@ staticman:
     date:
       type               : "date"
       options:
-        format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
-  endpoint               : "https://dev.staticman.net/v3/entry/github/" # URL of your own deployment with trailing slash, will fallback to the public instance
+        format           : "iso8601"
+  endpoint               : "https://api.staticman.net/v3/entry/github/" # URL of your own deployment with trailing slash, will fallback to the public instance
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey                : "6LdFCZoUAAAAAG_9ZWFYpt9-Y0gantzijLUOcCUR"
+  secret                 : "URDk8COHX0fnLzVjIpzmrGTfPl5eOSxlhdLVosooNZxeEIKciwBX5suSq3hssZmfTd7cRiwv5QngUyoUJwwn5Oj0vFDpb3U00IfNrsccHJQ/i35oEnou+gtVrTSKRzp44e1u2TQJoLGyj5MkK47tAw4KHwqfT39tptq3TWW07rM="
 atom_feed:
   path                   : # blank (default) uses feed.xml
 search                   : true # true, false (default)
