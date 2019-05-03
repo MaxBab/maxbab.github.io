@@ -142,6 +142,8 @@ ansible-playbook playbooks/tripleo_inventory.yml -e host=undercloud-host-fqdn/ip
 ***
 The role is reachable on the [GitHub][openstack-tripleo-inventory] or [Ansible Galaxy][openstack-tripleo-invenotry-galaxy].
 
+
+[//]: # Reference links
 [openstack-tripleo-inventory]: https://github.com/MaxBab/openstack-tripleo-inventory
 [openstack-tripleo-inventory-readme]: https://github.com/MaxBab/openstack-tripleo-inventory/blob/master/README.md
 [openstack-tripleo-invenotry-galaxy]: https://galaxy.ansible.com/maxbab/openstack-tripleo-inventory

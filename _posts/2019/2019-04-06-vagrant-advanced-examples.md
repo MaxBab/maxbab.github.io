@@ -851,6 +851,8 @@ Current reference, mention the value in another way: `server["port_guest"]`.
 
 The `vagrant.yml` file provided above has a simple yml file structure.
 
+
+[//]: # Reference links
 [vagrant]: https://www.vagrantup.com/
 [vagrant-examples-github]: https://github.com/MaxBab/vagrant-examples
 [vagrant-hostmanager]: https://github.com/devopsgroup-io/vagrant-hostmanager

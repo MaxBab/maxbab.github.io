@@ -152,6 +152,8 @@ $ git push --force --follow-tags --no-thin origin master:master
 At the current state, our repository has an updated branches and created tag, replicated from GerritHub to GitHub repository.  
 Enjoy and see you in the next articles!
 
+
+[//]: # Reference links
 [semver]: https://semver.org/
 [gerrithub]: http://gerrithub.io/
 [git tagging]: https://git-scm.com/book/en/v2/Git-Basics-Tagging

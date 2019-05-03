@@ -108,6 +108,8 @@ The direct pushes that bypass the review restricted by the Gerrit to:
 ### Finally
 I hope that at this step of the post, the `Gerrit` namespaces looks less confusing for you.  
 
+
+[//]: # Reference links
 [git-review]: https://linux.die.net/man/1/git-review
 [gerrit_push]: https://gerrit-review.googlesource.com/Documentation/user-upload.html#_git_push
 [tag_git_version]: {% post_url 2019/2019-03-12-tag-git-version-in-gerrit %}
