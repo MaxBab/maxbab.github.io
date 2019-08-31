@@ -91,14 +91,14 @@ Vagrant.configure(2) do |config|
 
       cpu = server[:cpu] ? server[:cpu] : 1;
       memory = server[:ram] ? server[:ram] : 512;
-      config.vm.provider "virtualbox" do |vb|
+      conf.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--cpus", cpu.to_s]
         vb.customize ["modifyvm", :id, "--memory", memory.to_s]
       end
 
-      config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
-      config.ssh.insert_key = false
-      config.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
+      conf.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
+      conf.ssh.insert_key = false
+      conf.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
     end
   end
 end
@@ -218,7 +218,7 @@ Checks for the custom cpu and/or ram defined for a specific server.
 ```ruby
 cpu = server[:cpu] ? server[:cpu] : 1;
 memory = server[:ram] ? server[:ram] : 512;
-config.vm.provider "virtualbox" do |vb|
+conf.vm.provider "virtualbox" do |vb|
   vb.customize ["modifyvm", :id, "--cpus", cpu.to_s]
   vb.customize ["modifyvm", :id, "--memory", memory.to_s]
 end
@@ -227,9 +227,9 @@ end
 <ins>Insert custom ssh public key to the vm</ins>  
 Takes the ssh key provided within the global variables and copying the public key to the server.
 ```ruby
-config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
-config.ssh.insert_key = false
-config.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
+conf.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
+conf.ssh.insert_key = false
+conf.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
 ```
 
 ***
@@ -321,25 +321,25 @@ Vagrant.configure(2) do |config|
 
       cpu = server[:cpu] ? server[:cpu] : 1;
       memory = server[:ram] ? server[:ram] : 512;
-      config.vm.provider "virtualbox" do |vb|
+      conf.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--cpus", cpu.to_s]
         vb.customize ["modifyvm", :id, "--memory", memory.to_s]
       end
 
-      config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
-      config.ssh.insert_key = false
-      config.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
+      conf.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
+      conf.ssh.insert_key = false
+      conf.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
 
       # The ubuntu/xenial64 box is missing python. Install it for ansible provision.
       if box_image == "ubuntu/xenial64"
-        config.vm.provision "shell" do |s|
+        conf.vm.provision "shell" do |s|
           s.inline = "test -e /usr/bin/python || (apt-get -qqy update && apt-get install -qqy python-minimal)"
         end
       end
 
       if index == servers.size - 1
         if ansible_playbook != ""
-          config.vm.provision :ansible do |ansible|
+          conf.vm.provision :ansible do |ansible|
             ansible.verbose = "v"
             ansible.limit = "all"
             ansible.groups = groups
@@ -383,7 +383,7 @@ end
 The "ubuntu/xenial64" box is missing python. Install it for ansible provision.
 ```ruby
 if box_image == "ubuntu/xenial64"
-  config.vm.provision "shell" do |s|
+  conf.vm.provision "shell" do |s|
     s.inline = "test -e /usr/bin/python || (apt-get -qqy update && apt-get install -qqy python-minimal)"
   end
 end
@@ -417,7 +417,7 @@ servers.each_with_index do |server, index|
 (output omitted...)
 if index == servers.size - 1
   if ansible_playbook != ""
-    config.vm.provision :ansible do |ansible|
+    conf.vm.provision :ansible do |ansible|
       ansible.verbose = "v"
       ansible.limit = "all"
       ansible.groups = groups
@@ -534,24 +534,24 @@ Vagrant.configure(2) do |config|
 
       cpu = server[:cpu] ? server[:cpu] : 1;
       memory = server[:ram] ? server[:ram] : 512;
-      config.vm.provider "virtualbox" do |vb|
+      conf.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--cpus", cpu.to_s]
         vb.customize ["modifyvm", :id, "--memory", memory.to_s]
       end
 
-      config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
-      config.ssh.insert_key = false
-      config.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
+      conf.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", ssh_key]
+      conf.ssh.insert_key = false
+      conf.vm.provision "file", source: ssh_key + ".pub", destination: "~/.ssh/authorized_keys"
 
       if box_image == "ubuntu/xenial64"
-        config.vm.provision "shell" do |s|
+        conf.vm.provision "shell" do |s|
           s.inline = "test -e /usr/bin/python || (apt-get -qqy update && apt-get install -qqy python-minimal)"
         end
       end
 
       if index == servers.size - 1
         if ansible_playbook != ""
-          config.vm.provision :ansible do |ansible|
+          conf.vm.provision :ansible do |ansible|
             ansible.inventory_path = ansible_inventory_path
             ansible.verbose = "v"
             ansible.limit = "all"
@@ -620,7 +620,7 @@ The ansible.inventory_path sets the path to the created inventory file.
 ```ruby
 if index == servers.size - 1
   if ansible_playbook != ""
-    config.vm.provision :ansible do |ansible|
+    conf.vm.provision :ansible do |ansible|
       ansible.inventory_path = ansible_inventory_path
       ansible.verbose = "v"
       ansible.limit = "all"
@@ -742,24 +742,24 @@ Vagrant.configure(2) do |config|
 
       cpu = server["cpu"] ? server["cpu"] : 1;
       memory = server["ram"] ? server["ram"] : 512;
-      config.vm.provider "virtualbox" do |vb|
+      conf.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--cpus", cpu.to_s]
         vb.customize ["modifyvm", :id, "--memory", memory.to_s]
       end
 
-      config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", vars['ssh_key']]
-      config.ssh.insert_key = false
-      config.vm.provision "file", source: vars['ssh_key'] + ".pub", destination: "~/.ssh/authorized_keys"
+      conf.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", vars['ssh_key']]
+      conf.ssh.insert_key = false
+      conf.vm.provision "file", source: vars['ssh_key'] + ".pub", destination: "~/.ssh/authorized_keys"
 
       if box_image == "ubuntu/xenial64"
-        config.vm.provision "shell" do |s|
+        conf.vm.provision "shell" do |s|
           s.inline = "test -e /usr/bin/python || (apt-get -qqy update && apt-get install -qqy python-minimal)"
         end
       end
 
       if index == servers.size - 1
         if ansible_playbook != ""
-          config.vm.provision :ansible do |ansible|
+          conf.vm.provision :ansible do |ansible|
             ansible.inventory_path = ansible_inventory_path
             ansible.verbose = "v"
             ansible.limit = "all"
